@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+    <style>
+      body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+      }
+      header {
+      background: white;
+      color: black;
+      height: 60px;
+      border-bottom: 1px solid black;
+      }
+      header h1 {
+      padding: 15px 55px;
+      font-size: 25px;
+      font-weight: normal;
+      min-width: 130px;
+      width: 10%;
+      }
+      header .mobile-menu-opener {
+      display: none;
+      }
+      header nav {
+      float: right;
+      }
+      header nav .nav-close {
+      display: none;
+      text-align: right;
+      margin: 10px;
+      }
+      header nav .nav-close img {
+      width: 25px;
+      }
+      header nav ul {
+      list-style: none;
+      }
+      header nav ul li {
+      float: left;
+      margin: 5px 15px;
+      }
+      .footer {
+      background: #000;
+      height: 100px;
+      color: #fff;
+      padding: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      }
+      .top-container {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      height: 90vw;
+      }
+      .top-container img {
+      width: 100%;
+      }
+      .top-container .top-message {
+      font-size: 40px;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 75%
+      max-width: 500px;
+      }
+      .separator {
+      height: 25px;
+      }
+      .separator-50 {
+      height: 50px;
+      }
+      .separator-75 {
+      height: 75px;
+      }
+      .separator-100 {
+      height: 100px;
+      }
+      .separator-headline {
+      text-align: center;
+      letter-spacing: 7px;
+      font-size: 17px;
+      }
+      .mid-container {
+      margin: 0.75%;
+      }
+      .bottom-container {
+      margin: 10px;
+      }
+      .bottom-container .enquire-btn-container {
+      text-align: center;
+      }
+      .bottom-container .enquire-btn-container input[type=button] {
+      width: 100px;
+      }
+      .common-button {
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      }
+      .content {
+      float: left;
+      width: 33.33%;
+      }
+      .content .img-container {
+      width: 96%;
+      margin: 2%;
+      overflow: hidden;
+      }
+      .content .img-container img {
+      width: 100%;
+      }
+      .form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px
+      }
+      .form .form-fields .field {
+      margin: 15px 0;
+      }
+      .form .form-fields .field input[type=text],
+      .form .form-fields .field input[type=number],
+      .form .form-fields .field textarea {
+      padding: 5px;
+      font-size: 15px;
+      width: 96%;
+      }
+      .form .form-fields .field textarea {
+      height: 100px;
+      font-family: Verdana;
+      }
+      .black-translucent-curtain {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      top: 0;
+      left: 0;
+      opacity: 50%;
+      display: none;
+      }
+      #popup-container {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      }
+      .popup {
+      position: relative;
+      background: white;
+      top: 10%;
+      width: 50%;
+      min-width: 250px;
+      max-width: 500px;
+      margin: 0 auto;
+      }
+      .popup .popup-close {
+      text-align: right;
+      padding: 20px;
+      }
+      .popup .popup-close img {
+      width: 25px;
+      cursor: pointer;
+      }
+      .fixed-enquire {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      }
+      .fixed-enquire .common-button {
+      border-radius: 25px;
+      }
+      .fixed-enquire .guy-img-container {
+      background: black;
+      display: inline-block;
+      border-radius: 100px;
+      height: 65px;
+      }
+      .fixed-enquire .guy-img-container img {
+      margin-bottom: -21px;
+      }
+      @media only screen and (max-width: 1000px) {
+      header nav
+      {
+      display: none;
+      height: 100%;
+      position: fixed;
+      background: white;
+      z-index: 1;
+      width: 250px;
+      top: 0;
+      right: 0;
+      font-size: 25px;
+      border-left: 1px solid black;
+      }
+      header nav .nav-close {
+      display: block;
+      }
+      header nav ul {
+      width: 100%;
+      margin: 60px 0 0;
+      padding: 0;
+      }
+      header nav ul li {
+      font-size: 20px;
+      padding: 15px 0 15px 15px;
+      border-top: 1px solid gray;
+      width: 100%;
+      margin: 0;
+      }
+      header .mobile-menu-opener {
+      display: block;
+      float: right;
+      margin: 15px;
+      }
+      header .mobile-menu-opener img {
+      width: 25px;
+      }
+      .content {
+      width: 50%;
+      height: 34.7vw;
+      overflow: hidden;
+      }
+      .content img {
+      margin-top: -30%;
+      }
+      }
+      @media only screen and (max-width: 600px) {
+      .content {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      }
+      .content img {
+      margin-top: -50%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class='mobile-menu-opener' onclick='openNav()'>
+        <img src='https://icon-library.com/images/plus-icon-transparent/plus-icon-transparent-0.jpg'/>
+      </div>
+      <nav>
+        <div class='nav-close'>
+          <img onclick='closeNav()' src='https://cdn-icons-png.flaticon.com/512/59/59836.png'/>
+        </div>
+        <ul>
+          <li>Home</li>
+          <li>Modern Kitchen Design</li>
+          <li>Living Room Design</li>
+          <li>Entertainment Unit Design</li>
+          <li>Testimonials</li>
+        </ul>
+      </nav>
+      <h1>IntelliHome</h1>
+    </header>
+    <div class='main'>
+    <div>
+    <div class='top-container' style='height: 670px;'>
+      <div class='top-message'>Designing Spaces &amp; Building Dreams.</div>
+      <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+    </div>
+    <div class='separator-50'/>
+    <div class='separator-headline'>OUR WORK</div>
+    <div class='separator-75'/>
+    <div class='mid-container'>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+      <div class='content'>
+        <div class='img-container'>
+          <img src='https://ksassets.timeincuk.net/wp/uploads/sites/56/2021/07/Dining-room.jpg'/>
+        </div>
+      </div>
+    </div>
+    <div style='clear: both;'/>
+      <div class='separator'/>
+        <div class='bottom-container'>
+          <div class='enquire-btn-container'>
+            <input class='common-button' onclick='openPopUp()' type='button' value='Enquire'/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='separator-100'/>
+    <div class='footer'/>
+    <div class='black-translucent-curtain'/>
+    <div id='popup-container'>
+      <div class='popup'>
+        <div class='popup-close'>
+          <img onclick='closePopUp()' src='https://cdn-icons-png.flaticon.com/512/59/59836.png'/>
+        </div>
+        <div class='form'>
+          <h2>Contact Us</h2>
+          <div class='form-fields'>
+            <div class='field'>
+              <input id='name' name='name' placeholder='Name' type='text'/>
+            </div>
+            <div class='field'>
+              <input id='mobile' name='mobile' placeholder='Mobile Number' type='number'/>
+            </div>
+            <div class='field'>
+              <textarea id='question' name='question' placeholder='Your question'/>
+            </div>
+            <div class='field'>
+              <input class='common-button' type='submit' value='Submit'/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='fixed-enquire'>
+      <input class='common-button' onclick='openPopUp()' type='button' value='Enquire'/>
+      <span class='guy-img-container'>
+      <img alt='Enquire' src='https://cdn.botpenguin.com/assets/avatars/avatar-1.png'/>
+      </span>
+    </div>
+    <!--iframe style="display: none;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/rUZqj59sK-Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=http://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="https://dinocasino.se/">https://dinocasino.se</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode.com/pl/</a></small></div><div><small><a href="https://casinomedbankid.net/">https://casinomedbankid.net</a></small></div></iframe -->
+    <div class='navbar no-items section' id='navbar'/>
+    <script>
+      const topContainer = gq(&#39;.top-container&#39;);
+      const header = document.querySelector(&#39;header&#39;);
+      const nav = gq(&#39;nav&#39;);
+      const curtain = gq(&#39;.black-translucent-curtain&#39;);
+      const popUpContainer = gq(&#39;#popup-container&#39;);
+      const BLOCK_S = &#39;block&#39;
+      const NONE_S = &#39;none&#39;
+      function init() {
+        topContainer.style.height = window.innerHeight - header.offsetHeight + &#39;px&#39;;
+        if (isPortrait()) {
+          const topContainerImg = gq(&#39;.top-container img&#39;);
+          topContainerImg.style.width = &#39;auto&#39;;
+      	  topContainerImg.style.height = &#39;100%&#39;;
+        }
+      }
+      function isPortrait() {
+        return window.innerHeight &gt; window.innerWidth;
+      }
+      function openNav() {
+        nav.style.display = BLOCK_S;
+        curtain.style.display = BLOCK_S;
+      }
+      function closeNav() {
+        nav.style.display = NONE_S;
+        curtain.style.display = NONE_S;
+      }
+      function openPopUp() {
+        curtain.style.display = BLOCK_S;
+        popUpContainer.style.display = BLOCK_S;
+      }
+      function closePopUp() {
+        curtain.style.display = NONE_S;
+        popUpContainer.style.display = NONE_S;
+      }
+      function gq(q) {
+        return document.querySelector(q);
+      }
+      init();
+    </script>
+  </body>
+</html>

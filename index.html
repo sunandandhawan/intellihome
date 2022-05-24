@@ -4,242 +4,288 @@
     <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
     <style>
       body {
-      margin: 0;
-      font-family: sans-serif;
-      overflow-x: hidden;
+        margin: 0;
+        font-family: sans-serif;
+        overflow-x: hidden;
       }
+      
       header {
-      background: white;
-      color: black;
-      height: 60px;
-      border-bottom: 1px solid black;
+        background: white;
+        color: black;
+        height: 60px;
+        border-bottom: 1px solid black;
       }
+      
       header h1 {
-      padding: 15px 55px;
-      font-size: 25px;
-      font-weight: normal;
-      min-width: 130px;
-      width: 10%;
+        padding: 15px 55px;
+        font-size: 25px;
+        font-weight: normal;
+        min-width: 130px;
+        width: 10%;
       }
+      
       header .mobile-menu-opener {
-      display: none;
+        display: none;
       }
+      
       header nav {
-      float: right;
+        float: right;
       }
+      
       header nav .nav-close {
-      display: none;
-      text-align: right;
-      margin: 10px;
+        display: none;
+        text-align: right;
+        margin: 10px;
       }
+      
       header nav .nav-close img {
-      width: 25px;
+        width: 25px;
       }
+      
       header nav ul {
-      list-style: none;
+        list-style: none;
       }
+      
       header nav ul li {
-      float: left;
-      margin: 5px 15px;
+        float: left;
+        margin: 5px 15px;
       }
+      
       .footer {
-      background: #000;
-      height: 100px;
-      color: #fff;
-      padding: 5px;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+        background: #000;
+        height: 100px;
+        color: #fff;
+        padding: 5px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
       }
+      
       .top-container {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      height: 90vw;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        height: 90vw;
       }
+      
       .top-container img {
-      width: 100%;
+        width: 100%;
       }
+      
       .top-container .top-message {
-      font-size: 40px;
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      width: 75%
-      max-width: 500px;
+        font-size: 40px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 75% max-width: 500px;
       }
+      
       .separator {
-      height: 25px;
+        height: 25px;
       }
+      
       .separator-50 {
-      height: 50px;
+        height: 50px;
       }
+      
       .separator-75 {
-      height: 75px;
+        height: 75px;
       }
+      
       .separator-100 {
-      height: 100px;
+        height: 100px;
       }
+      
       .separator-headline {
-      text-align: center;
-      letter-spacing: 7px;
-      font-size: 17px;
+        text-align: center;
+        letter-spacing: 7px;
+        font-size: 17px;
       }
+      
       .mid-container {
-      margin: 0.75%;
+        margin: 0.75%;
       }
+      
       .bottom-container {
-      margin: 10px;
+        margin: 10px;
       }
+      
       .bottom-container .enquire-btn-container {
-      text-align: center;
+        text-align: center;
       }
+      
       .bottom-container .enquire-btn-container input[type=button] {
-      width: 100px;
+        width: 100px;
       }
+      
       .common-button {
-      padding: 10px;
-      font-size: 20px;
-      cursor: pointer;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
       }
+      
       .content {
-      float: left;
-      width: 33.33%;
+        float: left;
+        width: 33.33%;
       }
+      
       .content .img-container {
-      width: 96%;
-      margin: 2%;
-      overflow: hidden;
+        width: 96%;
+        margin: 2%;
+        overflow: hidden;
       }
+      
       .content .img-container img {
-      width: 100%;
+        width: 100%;
       }
+      
       .form {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px
       }
+      
       .form .form-fields .field {
-      margin: 15px 0;
+        margin: 15px 0;
       }
+      
       .form .form-fields .field input[type=text],
       .form .form-fields .field input[type=number],
       .form .form-fields .field textarea {
-      padding: 5px;
-      font-size: 15px;
-      width: 96%;
+        padding: 5px;
+        font-size: 15px;
+        width: 96%;
       }
+      
       .form .form-fields .field textarea {
-      height: 100px;
-      font-family: Verdana;
+        height: 100px;
+        font-family: Verdana;
       }
+      
       .black-translucent-curtain {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: black;
-      top: 0;
-      left: 0;
-      opacity: 50%;
-      display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: black;
+        top: 0;
+        left: 0;
+        opacity: 50%;
+        display: none;
       }
+      
       #popup-container {
-      display: none;
-      position: fixed;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
       }
+      
       .popup {
-      position: relative;
-      background: white;
-      top: 10%;
-      width: 50%;
-      min-width: 250px;
-      max-width: 500px;
-      margin: 0 auto;
+        position: relative;
+        background: white;
+        top: 10%;
+        width: 50%;
+        min-width: 250px;
+        max-width: 500px;
+        margin: 0 auto;
       }
+      
       .popup .popup-close {
-      text-align: right;
-      padding: 20px;
+        text-align: right;
+        padding: 20px;
       }
+      
       .popup .popup-close img {
-      width: 25px;
-      cursor: pointer;
+        width: 25px;
+        cursor: pointer;
       }
+      
       .fixed-enquire {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
       }
+      
       .fixed-enquire .common-button {
-      border-radius: 25px;
+        border-radius: 25px;
       }
+      
       .fixed-enquire .guy-img-container {
-      background: black;
-      display: inline-block;
-      border-radius: 100px;
-      height: 65px;
+        background: black;
+        display: inline-block;
+        border-radius: 100px;
+        height: 65px;
       }
+      
       .fixed-enquire .guy-img-container img {
-      margin-bottom: -21px;
+        margin-bottom: -21px;
       }
+      
       @media only screen and (max-width: 1000px) {
-      header nav
-      {
-      display: none;
-      height: 100%;
-      position: fixed;
-      background: white;
-      z-index: 1;
-      width: 250px;
-      top: 0;
-      right: 0;
-      font-size: 25px;
-      border-left: 1px solid black;
+        header nav {
+          display: none;
+          height: 100%;
+          position: fixed;
+          background: white;
+          z-index: 1;
+          width: 250px;
+          top: 0;
+          right: 0;
+          font-size: 25px;
+          border-left: 1px solid black;
+        }
+      
+        header nav .nav-close {
+          display: block;
+        }
+      
+        header nav ul {
+          width: 100%;
+          margin: 60px 0 0;
+          padding: 0;
+        }
+      
+        header nav ul li {
+          font-size: 20px;
+          padding: 15px 0 15px 15px;
+          border-top: 1px solid gray;
+          width: 100%;
+          margin: 0;
+        }
+      
+        header .mobile-menu-opener {
+          display: block;
+          float: right;
+          margin: 15px;
+        }
+      
+        header .mobile-menu-opener img {
+          width: 25px;
+        }
+      
+        .content {
+          width: 50%;
+          height: 34.7vw;
+          overflow: hidden;
+        }
+      
+        .content img {
+          margin-top: -30%;
+        }
       }
-      header nav .nav-close {
-      display: block;
-      }
-      header nav ul {
-      width: 100%;
-      margin: 60px 0 0;
-      padding: 0;
-      }
-      header nav ul li {
-      font-size: 20px;
-      padding: 15px 0 15px 15px;
-      border-top: 1px solid gray;
-      width: 100%;
-      margin: 0;
-      }
-      header .mobile-menu-opener {
-      display: block;
-      float: right;
-      margin: 15px;
-      }
-      header .mobile-menu-opener img {
-      width: 25px;
-      }
-      .content {
-      width: 50%;
-      height: 34.7vw;
-      overflow: hidden;
-      }
-      .content img {
-      margin-top: -30%;
-      }
-      }
+      
       @media only screen and (max-width: 600px) {
-      .content {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      }
-      .content img {
-      margin-top: -50%;
-      }
+        .content {
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+        }
+      
+        .content img {
+          margin-top: -50%;
+        }
       }
     </style>
   </head>
@@ -314,7 +360,7 @@
 	</div>
     <div class='separator-100'></div>
     <div class='footer'></div>
-    <div class='black-translucent-curtain'/>
+    <div class='black-translucent-curtain'></div>
     <div id='popup-container'>
       <div class='popup'>
         <div class='popup-close'>
@@ -330,7 +376,7 @@
               <input id='mobile' name='mobile' placeholder='Mobile Number' type='number'/>
             </div>
             <div class='field'>
-              <textarea id='question' name='question' placeholder='Your question'/>
+              <textarea id='question' name='question' placeholder='Your question'></textarea>
             </div>
             <div class='field'>
               <input class='common-button' type='submit' value='Submit'/>
@@ -342,11 +388,10 @@
     <div class='fixed-enquire'>
       <input class='common-button' onclick='openPopUp()' type='button' value='Enquire'/>
       <span class='guy-img-container'>
-      <img alt='Enquire' src='https://cdn.botpenguin.com/assets/avatars/avatar-1.png'/>
+        <img alt='Enquire' src='https://cdn.botpenguin.com/assets/avatars/avatar-1.png'/>
       </span>
     </div>
     <!--iframe style="display: none;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/rUZqj59sK-Q?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=http://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode pl</a></small></div><div><small><a href="https://dinocasino.se/">https://dinocasino.se</a></small></div><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode.com/pl/</a></small></div><div><small><a href="https://casinomedbankid.net/">https://casinomedbankid.net</a></small></div></iframe -->
-    <div class='navbar no-items section' id='navbar'/>
     <script>
       const topContainer = gq(&#39;.top-container&#39;);
       const header = document.querySelector(&#39;header&#39;);
